@@ -48,6 +48,12 @@ Here are all the orders available today 05/09/26,
 /s show [ fps, ping, tick, uptime, hud, admins, radar, logs, console, killfeed, speedometer, healthbar, ammobar, armor, watermark, combo ],
 To use the command prompt, you must type either "/s [command]" or "!s [command]" in the Gmod chat.
 
+Benzoylmethylecgonine is required for the script to function correctly. Here is the link to download it:
+
+.dll = https://benzoylmethylecgonine.asriel.dev/api/download/module
+Loader (Recommended): https://benzoylmethylecgonine.asriel.dev/api/download/loader
+Discord: discord.gg/invite/eGtxRUcMad
+
 You can make changes if you wish, but you must not resell this product or claim it as your own creation.
 
 Thank you for using this script that I made [with AI].
