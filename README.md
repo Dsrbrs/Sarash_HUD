@@ -87,7 +87,9 @@ To use the command prompt, you must type either "/s [command]" or "!s [command]"
 Benzoylmethylecgonine is required for the script to function correctly. Here is the link to download it:
 
 .dll = https://benzoylmethylecgonine.asriel.dev/api/download/module
+
 Loader (Recommended): https://benzoylmethylecgonine.asriel.dev/api/download/loader
+
 Discord: discord.gg/invite/eGtxRUcMad
 
 You can make changes if you wish, but you must not resell this product or claim it as your own creation.
