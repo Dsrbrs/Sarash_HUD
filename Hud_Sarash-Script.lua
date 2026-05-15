@@ -901,7 +901,7 @@ render.Capture = function(data)
 	return cap
 end
 
-PushLog("info","SARASH HUD v1.0 chargé")
+PushLog("info","SARASH HUD v1.0")
 PushLog("info","MADE WITH BENZOY")
 
 hook.Add("OnPlayerChat", "SarashChatCmd", function(ply, text)
