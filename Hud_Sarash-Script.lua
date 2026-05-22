@@ -1,5 +1,5 @@
 -- ============================================================
--- SARASH HUD v0.1 — Full Edition
+-- SARASH HUD v0.2 - MADE BY RAYZIXFR ON DISCORD
 -- ============================================================
 
 ---------------------------------------------------------------
@@ -116,10 +116,13 @@ end
 local function GetGrade(ply)
     return IsValid(ply) and ply:GetUserGroup() or "user"
 end
+
 local function GradeColor(g, a)
     a = a or 255
     if g == "superadmin" then return Color(255,70,70,a)
     elseif g == "admin" then return Color(70,140,255,a)
+    elseif g == "mod" then return Color(0,0,205, a)
+    elseif g == "mod-test" then return Color(0,0,255, a)
     else return Color(160,160,160,a)
     end
 end
@@ -167,6 +170,7 @@ local LOG_COLORS = {
     cmd = Color(180,100,255),
     kill = Color(255,80,80),
     warn = Color(255, 255, 0),
+    dailylog = Color(138,43,226)
 }
 local function PushLog(kind, msg)
     table.insert(LOGS, { kind=kind, msg=msg, t=FormatTimestamp(), born=CurTime() })
@@ -297,7 +301,7 @@ COMMANDS["team"] = function()
     PushCmdOut("info","Team: "..team.GetName(ply:Team()))
 end
 
-COMMANDS["Rank"] = function()
+COMMANDS["rank"] = function()
     local ply = LocalPlayer()
     if not IsValid(ply) then return end
     PushCmdOut("info","Rank: "..GetGrade(ply))
@@ -313,7 +317,7 @@ COMMANDS["name"] = function(args)
     if not args[1] then PushCmdOut("err","Use: name [new name]") return end
     local n = table.concat(args, " ")
     STATE.playerNameOverride = n
-    PushCmdOut("OK","Name → "..n)
+    PushCmdOut("ok","Name → "..n)
     PushLog("cmd","name "..n)
 end
 
@@ -646,10 +650,10 @@ hook.Add("HUDPaint","SarashHUD", function()
             prev = {nx,ny}
         end
 
-        draw.SimpleText("N","SHUD_Radar",cx,f.y+20,Color(600,20,20),TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
-        draw.SimpleText("S","SHUD_Radar",cx,f.y+sz-5,Color(600,20,20),TEXT_ALIGN_CENTER,TEXT_ALIGN_BOTTOM)
-        draw.SimpleText("E","SHUD_Radar",f.x+sz-5,cy,Color(600,20,20),TEXT_ALIGN_RIGHT,TEXT_ALIGN_CENTER)
-        draw.SimpleText("O","SHUD_Radar",f.x+5,cy,Color(600,20,20),TEXT_ALIGN_LEFT,TEXT_ALIGN_CENTER)
+        draw.SimpleText("N","SHUD_Radar",cx,f.y+20,Color(200,20,20),TEXT_ALIGN_CENTER,TEXT_ALIGN_TOP)
+        draw.SimpleText("S","SHUD_Radar",cx,f.y+sz-5,Color(200,20,20),TEXT_ALIGN_CENTER,TEXT_ALIGN_BOTTOM)
+        draw.SimpleText("E","SHUD_Radar",f.x+sz-5,cy,Color(200,20,20),TEXT_ALIGN_RIGHT,TEXT_ALIGN_CENTER)
+        draw.SimpleText("O","SHUD_Radar",f.x+5,cy,Color(200,20,20),TEXT_ALIGN_LEFT,TEXT_ALIGN_CENTER)
 
         local rplayers = GetRadarPlayers()
         for _, rp in ipairs(rplayers) do
@@ -790,7 +794,7 @@ hook.Add("HUDPaint","SarashHUD", function()
 
     -- ── WATERMARK ───────────────────────────────
     if STATE.showWatermark then
-        draw.SimpleText("SARASH v0.1","SHUD_Label",
+        draw.SimpleText("SARASH v0.2","SHUD_Label",
             ScrW()-5, ScrH()-5,
             Color(25,25,25,255), TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM)
     end
@@ -901,8 +905,10 @@ render.Capture = function(data)
 	return cap
 end
 
-PushLog("info","SARASH HUD v1.0")
+PushLog("info","SARASH HUD v1.1")
 PushLog("info","MADE WITH BENZOY")
+PushLog("dailylog", "MADE BY RAYZIXFR")
+
 
 hook.Add("OnPlayerChat", "SarashChatCmd", function(ply, text)
     if ply ~= LocalPlayer() then return end
