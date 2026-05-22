@@ -1,7 +1,7 @@
 # Sarash_HUD
 "Sarash_HUD" is a HUD I created that allows us to have a Watermark, Radar, Admin List, Console, and Logs on GMod. I recommend reading the script to understand it, part of the script is done by artificial intelligence, but I've reworked it.
 
-Here are all the orders available today 05/09/26,
+Here are all the orders available today 05/22/26,
 
 /s clear,
 
@@ -17,7 +17,7 @@ Here are all the orders available today 05/09/26,
 
 /s map,
 
-/sserver,
+/s server,
 
 /s maxplayers,
 
@@ -94,4 +94,4 @@ Discord: discord.gg/invite/eGtxRUcMad
 
 You can make changes if you wish, but you must not resell this product or claim it as your own creation.
 
-Thank you for using this script that I made [with AI].
+Thank you for using this script.
